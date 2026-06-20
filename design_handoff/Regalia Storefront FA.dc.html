@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#5B3A7E"/><text x="50" y="62" font-family="Georgia,serif" font-size="40" fill="#CBA24E" text-anchor="middle">ر</text></svg></template>
+<script src="./image-slot.js"></script>
+<style>
+  body{ margin:0; }
+  :root{
+    --canvas:#E7E0EE;
+    --c-primary:#5B3A7E; --c-primary-d:#38215A;
+    --c-accent:#CBA24E; --c-accent-d:#A8822F;
+    --bg-app:#FAF7F2; --bg-card:#FFFFFF; --bg-sunken:#F4EEF8;
+    --tx-head:#2D1B3D; --tx-body:#6A5A78; --tx-mute:#9A86A8;
+    --line:#E7DDEC; --line-soft:#ECE4F0; --hover:#F4EEF8;
+    --on-primary:#FFFFFF; --on-accent:#3A2A06;
+    --ok:#2F7D5B; --bad:#B23A48;
+  }
+  [data-mode="dark"]{
+    --canvas:#0E0A16;
+    --c-primary:#7E57B0; --c-primary-d:#3A2558;
+    --c-accent:#D9B463; --c-accent-d:#C29A45;
+    --bg-app:#171022; --bg-card:#201733; --bg-sunken:#2A1E40;
+    --tx-head:#F3ECF8; --tx-body:#C4B6D2; --tx-mute:#8E7DA0;
+    --line:#33264A; --line-soft:#3A2C52; --hover:#2A1E40;
+    --on-primary:#FFFFFF; --on-accent:#241803;
+    --ok:#5BC08C; --bad:#E0808C;
+  }
+  [data-theme="emerald"]{ --c-primary:#1F7A7C; --c-primary-d:#0F4D52; }
+  [data-theme="emerald"][data-mode="dark"]{ --c-primary:#3E9FA1; --c-primary-d:#16494C; }
+  *:focus-visible{ outline:2px solid var(--c-accent); outline-offset:2px; }
+  @keyframes sh{ 0%{ background-position:-180px 0 } 100%{ background-position:180px 0 } }
+  @keyframes spin{ to{ transform:rotate(360deg) } }
+  @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important } }
+</style>
+</helmet>
+<div dir="rtl" lang="fa" data-mode="{{ modeAttr }}" data-theme="{{ themeAttr }}" style="min-height:100vh;width:max-content;min-width:100%;box-sizing:border-box;background:var(--canvas);padding:46px 48px 72px;font-family:'Vazirmatn', sans-serif;">
+
+  <div style="max-width:1200px;margin:0 auto 38px;">
+    <div style="font-size:12px;letter-spacing:0.18em;color:var(--c-accent-d);font-weight:600;">رگالیا · فروشگاه نیم‌ست دست‌ساز</div>
+    <h1 style="font-family:'Markazi Text', serif;font-size:46px;line-height:1.05;color:var(--tx-head);margin:6px 0 0;font-weight:600;">صفحه‌های فروشگاه — موبایل، راست‌چین</h1>
+    <p style="font-size:14.5px;line-height:1.9;color:var(--tx-body);font-weight:300;max-width:640px;margin:10px 0 0;">جریان کامل خرید مهمان بدون حساب کاربری؛ از ویترین تا نتیجهٔ پرداخت. همهٔ رنگ‌ها از توکن‌های سیستم طراحی می‌آیند و حالت روشن/تیره با همان توکن‌ها کار می‌کند. عکس محصول را روی هر کادر بکشید و رها کنید.</p>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:42px;align-items:flex-start;justify-content:flex-start;">
+
+    <!-- ============ 1 · HOME ============ -->
+    <div style="flex:none;display:flex;flex-direction:column;gap:12px;">
+      <div style="display:flex;align-items:center;gap:9px;"><span style="font-size:12px;font-weight:600;color:var(--on-primary);background:var(--c-primary);border-radius:7px;padding:3px 9px;">۰۱</span><span style="font-family:'Markazi Text',serif;font-size:21px;color:var(--tx-head);">خانه</span></div>
+      <div data-screen-label="خانه" style="width:392px;background:var(--bg-app);border:1px solid var(--line-soft);border-radius:30px;overflow:hidden;box-shadow:0 20px 48px rgba(45,27,61,0.16);">
+
+        <header style="position:sticky;top:0;z-index:5;background:var(--bg-card);border-bottom:1px solid var(--line);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;">
+          <div style="display:flex;align-items:center;gap:9px;"><span style="font-family:'Markazi Text',serif;font-size:25px;font-weight:600;letter-spacing:0.02em;color:var(--tx-head);">رگالیا</span><span style="width:6px;height:6px;border-radius:50%;background:var(--c-accent);"></span></div>
+          <div style="display:flex;align-items:center;gap:16px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--tx-head)" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.2-3.2"/></svg>
+            <div style="position:relative;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="var(--tx-head)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1.2 12.2a2 2 0 0 1-2 1.8H9.2a2 2 0 0 1-2-1.8Z"/><path d="M9 7V6a3 3 0 0 1 6 0v1"/></svg><span style="position:absolute;top:-7px;inset-inline-start:-8px;background:var(--c-accent);color:var(--on-accent);font-size:10px;font-weight:700;min-width:16px;height:16px;border-radius:9px;display:flex;align-items:center;justify-content:center;padding:0 3px;">۲</span></div>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--tx-head)" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </div>
+        </header>
+
+        <div style="background:var(--c-primary-d);color:var(--bg-app);font-size:11.5px;letter-spacing:0.04em;text-align:center;padding:8px;">ارسال رایگان سفارش‌های بالای ۳٬۰۰۰٬۰۰۰ تومان · بسته‌بندی هدیه</div>
+
+        <!-- hero -->
+        <div style="position:relative;margin:16px;border-radius:22px;overflow:hidden;border:1px solid var(--c-accent);box-shadow:0 0 0 1px var(--bg-card) inset;">
+          <image-slot id="fa-hero" shape="rect" placeholder="تصویر نیم‌ست شاخص" style="display:block;width:100%;height:300px;"></image-slot>
+          <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(45,27,61,0.62), rgba(45,27,61,0.05) 55%);"></div>
+          <div style="position:absolute;inset-inline:18px;bottom:18px;text-align:start;">
+            <div style="font-size:10.5px;letter-spacing:0.22em;color:var(--c-accent);font-weight:600;margin-bottom:6px;">مجموعهٔ مهتاب</div>
+            <div style="font-family:'Markazi Text',serif;font-size:30px;line-height:1.12;color:#FFFFFF;font-weight:600;">نقره و سنگ، در یک قاب نور</div>
+            <button style="margin-top:13px;font-family:'Vazirmatn',sans-serif;font-size:13.5px;font-weight:600;color:var(--on-accent);background:var(--c-accent);border:none;border-radius:12px;padding:11px 20px;cursor:pointer;">ادامهٔ خرید</button>
+          </div>
+        </div>
+
+        <!-- categories -->
+        <div style="padding:6px 16px 0;display:flex;align-items:center;justify-content:space-between;">
+          <span style="font-family:'Markazi Text',serif;font-size:22px;color:var(--tx-head);">دسته‌بندی‌ها</span>
+        </div>
+        <div style="padding:12px 16px 4px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:7px;padding:12px 4px;border-radius:16px;background:var(--bg-card);border:1px solid var(--line-soft);cursor:pointer;">
+            <svg viewBox="0 0 64 64" width="34" height="34" fill="none"><path d="M15 15 C15 41 49 41 49 15" fill="none" stroke="var(--c-accent)" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="0.5 4.4"/><circle cx="32" cy="40" r="2.4" fill="var(--c-accent)"/><path d="M32 43 l5.5 7 -5.5 8 -5.5 -8 Z" fill="var(--c-primary)"/><path d="M32 43 l5.5 7 -5.5 0.5 Z" fill="var(--c-primary-d)"/></svg>
+            <span style="font-size:11.5px;color:var(--tx-body);">گردنبند</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:7px;padding:12px 4px;border-radius:16px;background:var(--bg-card);border:1px solid var(--line-soft);cursor:pointer;">
+            <svg viewBox="0 0 64 64" width="34" height="34" fill="none"><ellipse cx="32" cy="33" rx="19" ry="14" fill="none" stroke="var(--c-primary)" stroke-width="4.5"/><path d="M15 35 a19 14 0 0 0 34 0" fill="none" stroke="var(--c-primary-d)" stroke-width="4.5" stroke-linecap="round"/><circle cx="32" cy="19.2" r="4" fill="var(--c-accent)"/><circle cx="18.5" cy="27" r="3" fill="var(--c-accent)"/><circle cx="45.5" cy="27" r="3" fill="var(--c-accent)"/></svg>
+            <span style="font-size:11.5px;color:var(--tx-body);">دستبند</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:7px;padding:12px 4px;border-radius:16px;background:var(--bg-card);border:1px solid var(--line-soft);cursor:pointer;">
+            <svg viewBox="0 0 64 64" width="34" height="34" fill="none"><path d="M22 13 a7 7 0 0 1 1 13" stroke="var(--c-accent)" stroke-width="2.6" stroke-linecap="round"/><path d="M22.5 26 C17 31 17 39 22.5 43 C28 39 28 31 22.5 26 Z" fill="var(--c-primary)"/><path d="M22.5 26 C17 31 17 39 22.5 43 Z" fill="var(--c-primary-d)"/><path d="M42 13 a7 7 0 0 1 1 13" stroke="var(--c-accent)" stroke-width="2.6" stroke-linecap="round"/><path d="M42.5 26 C37 31 37 39 42.5 43 C48 39 48 31 42.5 26 Z" fill="var(--c-primary)"/><path d="M42.5 26 C37 31 37 39 42.5 43 Z" fill="var(--c-primary-d)"/></svg>
+            <span style="font-size:11.5px;color:var(--tx-body);">گوشواره</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:7px;padding:12px 4px;border-radius:16px;background:var(--bg-card);border:1px solid var(--line-soft);cursor:pointer;">
+            <svg viewBox="0 0 64 64" width="34" height="34" fill="none"><circle cx="32" cy="40" r="13" fill="none" stroke="var(--c-accent)" stroke-width="5"/><path d="M24 18 L32 9 L40 18 L32 30 Z" fill="var(--c-primary)"/><path d="M24 18 L32 9 L40 18 Z" fill="var(--c-primary-d)"/><path d="M28 18 L32 14 L36 18 L32 23 Z" fill="var(--c-accent)" opacity="0.9"/></svg>
+            <span style="font-size:11.5px;color:var(--tx-body);">انگشتر</span>
+          </div>
+        </div>
+
+        <!-- featured -->
+        <div style="padding:18px 16px 6px;display:flex;align-items:baseline;justify-content:space-between;">
+          <span style="font-family:'Markazi Text',serif;font-size:22px;color:var(--tx-head);">محصولات منتخب</span>
+          <span style="font-size:12px;color:var(--c-primary);font-weight:500;">همه ‹</span>
+        </div>
+        <div style="padding:6px 16px 22px;display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+          <!-- card a -->
+          <div style="background:var(--bg-card);border:1px solid var(--line-soft);border-radius:18px;overflow:hidden;transition:box-shadow .18s, border-color .18s;" style-hover="border-color:var(--c-accent);box-shadow:0 0 0 1px var(--c-accent), 0 14px 26px rgba(45,27,61,0.12);">
+            <div style="position:relative;background:var(--bg-sunken);"><image-slot id="fa-f1" shape="rect" placeholder="عکس" style="display:block;width:100%;height:140px;"></image-slot><span style="position:absolute;top:9px;inset-inline-end:9px;background:var(--c-accent);color:var(--on-accent);font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;">تخفیف</span></div>
+            <div style="padding:11px 12px 13px;display:flex;flex-direction:column;gap:4px;">
+              <span style="font-size:10px;letter-spacing:0.1em;color:var(--tx-mute);">نیم‌ست</span>
+              <span style="font-family:'Markazi Text',serif;font-size:18px;color:var(--tx-head);line-height:1.1;">نیم‌ست مهتاب</span>
+              <div style="display:flex;align-items:baseline;gap:6px;margin-top:2px;">
+                <span style="font-size:14.5px;font-weight:700;color:var(--c-accent-d);">۲٬۴۵۰٬۰۰۰</span>
+                <span style="font-size:10.5px;color:var(--tx-mute);text-decoration:line-through;">۲٬۹۰۰٬۰۰۰</span>
+              </div>
+            </div>
+          </div>
+          <!-- card b -->
+          <div style="background:var(--bg-card);border:1px solid var(--line-soft);border-radius:18px;overflow:hidden;transition:box-shadow .18s, border-color .18s;" style-hover="border-color:var(--c-accent);box-shadow:0 0 0 1px var(--c-accent), 0 14px 26px rgba(45,27,61,0.12);">
+            <div style="position:relative;background:var(--bg-sunken);"><image-slot id="fa-f2" shape="rect" placeholder="عکس" style="display:block;width:100%;height:140px;"></image-slot></div>
+            <div style="padding:11px 12px 13px;display:flex;flex-direction:column;gap:4px;">
+              <span style="font-size:10px;letter-spacing:0.1em;color:var(--tx-mute);">گوشواره</span>
+              <span style="font-family:'Markazi Text',serif;font-size:18px;color:var(--tx-head);line-height:1.1;">گوشواره قطره</span>
+              <span style="font-size:14.5px;font-weight:700;color:var(--c-primary);margin-top:2px;">۱٬۲۵۰٬۰۰۰</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- footer -->
+        <footer style="background:var(--bg-card);border-top:1px solid var(--line);padding:22px 18px;display:flex;flex-direction:column;gap:14px;">
+          <div style="display:flex;flex-wrap:wrap;gap:10px 18px;font-size:12.5px;color:var(--tx-body);"><span>فروشگاه</span><span>دربارهٔ ما</span><span>تماس</span><span>ارسال و مرجوعی</span><span>حریم خصوصی</span></div>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="display:flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:10px;padding:7px 10px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span style="font-size:11px;color:var(--tx-mute);">نماد اعتماد</span></div>
+            <div style="display:flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:10px;padding:7px 10px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--tx-mute)" stroke-width="1.8"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span style="font-size:11px;color:var(--tx-mute);">پرداخت امن</span></div>
+          </div>
+          <div style="font-size:11px;color:var(--tx-mute);">© ۱۴۰۵ رگالیا · ساخت ایران</div>
+        </footer>
+      </div>
+    </div>
+
+    <!-- ============ 2 · SHOP ============ -->
+    <div style="flex:none;display:flex;flex-direction:column;gap:12px;">
+      <div style="display:flex;align-items:center;gap:9px;"><span style="font-size:12px;font-weight:600;color:var(--on-primary);background:var(--c-primary);border-radius:7px;padding:3px 9px;">۰۲</span><span style="font-family:'Markazi Text',serif;font-size:21px;color:var(--tx-head);">فروشگاه</span></div>
+      <div data-screen-label="فروشگاه" style="width:392px;background:var(--bg-app);border:1px solid var(--line-soft);border-radius:30px;overflow:hidden;box-shadow:0 20px 48px rgba(45,27,61,0.16);">
+
+        <header style="position:sticky;top:0;z-index:5;background:var(--bg-card);border-bottom:1px solid var(--line);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;">
+          <div style="display:flex;align-items:center;gap:9px;"><span style="font-family:'Markazi Text',serif;font-size:25px;font-weight:600;color:var(--tx-head);">رگالیا</span><span style="width:6px;height:6px;border-radius:50%;background:var(--c-accent);"></span></div>
+          <div style="display:flex;align-items:center;gap:16px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--tx-head)" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.2-3.2"/></svg>
+            <div style="position:relative;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="var(--tx-head)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1.2 12.2a2 2 0 0 1-2 1.8H9.2a2 2 0 0 1-2-1.8Z"/><path d="M9 7V6a3 3 0 0 1 6 0v1"/></svg><span style="position:absolute;top:-7px;inset-inline-start:-8px;background:var(--c-accent);color:var(--on-accent);font-size:10px;font-weight:700;min-width:16px;height:16px;border-radius:9px;display:flex;align-items:center;justify-content:center;padding:0 3px;">۲</span></div>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--tx-head)" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </div>
+        </header>
+
+        <!-- search bar -->
+        <div style="padding:14px 16px 0;">
+          <div style="display:flex;align-items:center;gap:9px;background:var(--bg-card);border:1px solid var(--line);border-radius:13px;padding:11px 13px;">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--tx-mute)" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.2-3.2"/></svg>
+            <span style="font-size:13px;color:var(--tx-mute);">جستجوی محصولات…</span>
+          </div>
+        </div>
+
+        <!-- breadcrumb + sort -->
+        <div style="padding:14px 16px 0;display:flex;align-items:center;justify-content:space-between;">
+          <div style="font-size:11.5px;color:var(--tx-mute);">خانه ‹ فروشگاه</div>
+          <div style="display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--tx-body);background:var(--bg-card);border:1px solid var(--line);border-radius:10px;padding:8px 12px;cursor:pointer;">مرتب‌سازی<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--tx-body)" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+
+        <!-- filter chips -->
+        <div style="padding:12px 16px 4px;display:flex;gap:8px;flex-wrap:wrap;">
+          <span style="font-size:12px;font-weight:600;color:var(--on-primary);background:var(--c-primary);border-radius:20px;padding:7px 13px;">همه</span>
+          <span style="font-size:12px;color:var(--tx-body);background:var(--bg-card);border:1px solid var(--line);border-radius:20px;padding:7px 13px;">گردنبند</span>
+          <span style="font-size:12px;color:var(--tx-body);background:var(--bg-card);border:1px solid var(--line);border-radius:20px;padding:7px 13px;">دستبند</span>
+          <span style="font-size:12px;color:var(--tx-body);background:var(--bg-card);border:1px solid var(--line);border-radius:20px;padding:7px 13px;">گوشواره</span>
+        </div>
+
+        <div style="padding:8px 16px 4px;font-size:11.5px;color:var(--tx-mute);">نمایش ۱ تا ۶ از ۲۴ محصول</div>
+
+        <!-- grid -->
+        <div style="padding:6px 16px 18px;display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+          <!-- p1 sale -->
+          <div style="background:var(--bg-card);border:1px solid var(--line-soft);border-radius:18px;overflow:hidden;transition:box-shadow .18s, border-color .18s;" style-hover="border-color:var(--c-accent);box-shadow:0 0 0 1px var(--c-accent), 0 14px 26px rgba(45,27,61,0.12);">
+            <div style="position:relative;background:var(--bg-sunken);"><image-slot id="fa-s1" shape="rect" placeholder="عکس" style="display:block;width:100%;height:138px;"></image-slot><span style="position:absolute;top:9px;inset-inline-end:9px;background:var(--c-accent);color:var(--on-accent);font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;">تخفیف</span></div>
+            <div style="padding:11px 12px 12px;display:flex;flex-direction:column;gap:4px;">
+              <span style="font-family:'Markazi Text',serif;font-size:17px;color:var(--tx-head);line-height:1.1;">نیم‌ست مهتاب</span>
+              <div style="display:flex;align-items:baseline;gap:6px;"><span style="font-size:14px;font-weight:700;color:var(--c-accent-d);">۲٬۴۵۰٬۰۰۰</span><span style="font-size:10px;color:var(--tx-mute);text-decoration:line-through;">۲٬۹۰۰٬۰۰۰</span></div>
+              <button style="margin-top:6px;font-family:'Vazirmatn',sans-serif;font-size:12px;font-weight:600;color:var(--c-primary);background:var(--bg-sunken);border:none;border-radius:10px;padding:9px;cursor:pointer;">افزودن به سبد</button>
+            </div>
+          </div>
+          <!-- p2 -->
+          <div style="background:var(--bg-card);border:1px solid var(--line-soft);border-radius:18px;overflow:hidden;transition:box-shadow .18s, border-color .18s;" style-hover="border-color:var(--c-accent);box-shadow:0 0 0 1px var(--c-accent), 0 14px 26px rgba(45,27,61,0.12);">
+            <div style="position:relative;background:var(--bg-sunken);"><image-slot id="fa-s2" shape="rect" placeholder="عکس" style="display:block;width:100%;height:138px;"></image-slot></div>
+            <div style="padding:11px 12px 12px;display:flex;flex-direction:column;gap:4px;">
+              <span style="font-family:'Markazi Text',serif;font-size:17px;color:var(--tx-head);line-height:1.1;">گردنبند ماه</span>
+              <span style="font-size:14px;font-weight:700;color:var(--c-primary);">۱٬۹۵۰٬۰۰۰</span>
+              <button style="margin-top:6px;font-family:'Vazirmatn',sans-serif;font-size:12px;font-weight:600;color:var(--c-primary);background:var(--bg-sunken);border:none;border-radius:10px;padding:9px;cursor:pointer;">افزودن به سبد</button>
+            </div>
+          </div>
+          <!-- p3 -->
+          <div style="background:var(--bg-card);border:1px solid var(--line-soft);border-radius:18px;overflow:hidden;transition:box-shadow .18s, border-color .18s;" style-hover="border-color:var(--c-accent);box-shadow:0 0 0 1px var(--c-accent), 0 14px 26px rgba(45,27,61,0.12);">
+            <div style="position:relative;background:var(--bg-sunken);"><image-slot id="fa-s3" shape="rect" placeholder="عکس" style="display:block;width:100%;height:138px;"></image-slot></div>
+            <div style="padding:11px 12px 12px;display:flex;flex-direction:column;gap:4px;">
+              <span style="font-family:'Markazi Text',serif;font-size:17px;color:var(--tx-head);line-height:1.1;">دستبند ظریف</span>
+              <span style="font-size:14px;font-weight:700;color:var(--c-primary);">۸۹۰٬۰۰۰</span>
+              <button style="margin-top:6px;font-family:'Vazirmatn',sans-serif;font-size:12px;font-weight:600;color:var(--c-primary);background:var(--bg-sunken);border:none;border-radius:10px;padding:9px;cursor:pointer;">افزودن به سبد</button>
+            </div>
+          </div>
+          <!-- p4 out of stock -->
+          <div style="background:var(--bg-card);border:1px solid var(--line-soft);border-radius:18px;overflow:hidden;">
+            <div style="position:relative;background:var(--bg-sunken);"><image-slot id="fa-s4" shape="rect" placeholder="عکس" style="display:block;width:100%;height:138px;opacity:0.55;"></image-slot><span style="position:absolute;top:9px;inset-inline-end:9px;background:var(--tx-mute);color:var(--bg-card);font-size:10px;font-weight:600;padding:3px 8px;border-radius:20px;">ناموجود</span></div>
+            <div style="padding:11px 12px 12px;display:flex;flex-direction:column;gap:4px;">
+              <span style="font-family:'Markazi Text',serif;font-size:17px;color:var(--tx-head);line-height:1.1;">نیم‌ست شبنم</span>
+              <span style="font-size:14px;font-weight:700;color:var(--tx-mute);">۳٬۲۰۰٬۰۰۰</span>
+              <button disabled style="margin-top:6px;font-family:'Vazirmatn',sans-serif;font-size:12px;font-weight:600;color:var(--tx-mute);background:transparent;border:1px solid var(--line);border-radius:10px;padding:9px;cursor:not-allowed;">اطلاع موجود شدن</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- pagination -->
+        <div style="padding:4px 16px 26px;display:flex;justify-content:center;align-items:center;gap:8px;">
+          <span style="width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);color:var(--tx-body);font-size:13px;cursor:pointer;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--tx-body)" stroke-width="2.2"><path d="M9 6l6 6-6 6"/></svg></span>
+          <span style="width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:var(--c-primary);color:var(--on-primary);font-size:13px;cursor:pointer;">۱</span>
+          <span style="width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);color:var(--tx-body);font-size:13px;cursor:pointer;">۲</span>
+          <span style="width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);color:var(--tx-body);font-size:13px;cursor:pointer;">۳</span>
+          <span style="width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);color:var(--tx-body);font-size:13px;cursor:pointer;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--tx-body)" stroke-width="2.2"><path d="M15 6l-6 6 6 6"/></svg></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 3 · FILTER SHEET ============ -->
+    <div style="flex:none;display:flex;flex-direction:column;gap:12px;">
+      <div style="display:flex;align-items:center;gap:9px;"><span style="font-size:12px;font-weight:600;color:var(--on-primary);background:var(--c-primary);border-radius:7px;padding:3px 9px;">۰۳</span><span style="font-family:'Markazi Text',serif;font-size:21px;color:var(--tx-head);">فیلترها</span></div>
+      <div data-screen-label="فیلترها" style="width:392px;height:760px;position:relative;background:var(--bg-app);border:1px solid var(--line-soft);border-radius:30px;overflow:hidden;box-shadow:0 20px 48px rgba(45,27,61,0.16);">
+        <!-- dimmed shop behind -->
+        <div style="position:absolute;inset:0;background:var(--bg-app);"></div>
+        <div style="position:absolute;inset:0;background:rgba(45,27,61,0.45);"></div>
+        <!-- sheet -->
+        <div style="position:absolute;inset-inline:0;bottom:0;background:var(--bg-card);border-radius:26px 26px 0 0;padding:10px 20px 22px;box-shadow:0 -10px 40px rgba(45,27,61,0.2);">
+          <div style="width:42px;height:5px;border-radius:3px;background:var(--line);margin:6px auto 14px;"></div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;">
+            <span style="font-family:'Markazi Text',serif;font-size:24px;color:var(--tx-head);">فیلتر</span>
+            <span style="font-size:12.5px;color:var(--c-primary);font-weight:600;cursor:pointer;">پاک کردن</span>
+          </div>
+
+          <div style="font-size:12px;font-weight:600;color:var(--tx-head);margin-bottom:11px;">دسته‌بندی</div>
+          <div style="display:flex;flex-direction:column;gap:13px;margin-bottom:20px;">
+            <label style="display:flex;align-items:center;gap:11px;font-size:13.5px;color:var(--tx-body);cursor:pointer;"><span style="width:18px;height:18px;border-radius:6px;background:var(--c-primary);display:flex;align-items:center;justify-content:center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--on-primary)" stroke-width="3"><path d="M5 12l5 5 9-10"/></svg></span>گردنبند<span style="margin-inline-start:auto;font-size:12px;color:var(--tx-mute);">۸</span></label>
+            <label style="display:flex;align-items:center;gap:11px;font-size:13.5px;color:var(--tx-body);cursor:pointer;"><span style="width:18px;height:18px;border-radius:6px;border:1.5px solid var(--line);"></span>دستبند<span style="margin-inline-start:auto;font-size:12px;color:var(--tx-mute);">۶</span></label>
+            <label style="display:flex;align-items:center;gap:11px;font-size:13.5px;color:var(--tx-body);cursor:pointer;"><span style="width:18px;height:18px;border-radius:6px;border:1.5px solid var(--line);"></span>گوشواره<span style="margin-inline-start:auto;font-size:12px;color:var(--tx-mute);">۵</span></label>
+            <label style="display:flex;align-items:center;gap:11px;font-size:13.5px;color:var(--tx-body);cursor:pointer;"><span style="width:18px;height:18px;border-radius:6px;border:1.5px solid var(--line);"></span>انگشتر<span style="margin-inline-start:auto;font-size:12px;color:var(--tx-mute);">۵</span></label>
+          </div>
+
+          <div style="font-size:12px;font-weight:600;color:var(--tx-head);margin-bottom:12px;">محدودهٔ قیمت (تومان)</div>
+          <div style="height:5px;background:var(--line);border-radius:3px;position:relative;margin:6px 4px 8px;">
+            <span style="position:absolute;inset-inline-start:8%;inset-inline-end:28%;top:0;height:5px;background:var(--c-primary);border-radius:3px;"></span>
+            <span style="position:absolute;inset-inline-start:8%;top:-5px;width:15px;height:15px;border-radius:50%;background:var(--bg-card);border:2px solid var(--c-primary);"></span>
+            <span style="position:absolute;inset-inline-end:28%;top:-5px;width:15px;height:15px;border-radius:50%;background:var(--bg-card);border:2px solid var(--c-primary);"></span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--tx-body);margin-bottom:18px;"><span>۵۰۰٬۰۰۰</span><span>۳٬۵۰۰٬۰۰۰</span></div>
+
+          <div style="font-size:12px;font-weight:600;color:var(--tx-head);margin-bottom:11px;">موجودی</div>
+          <label style="display:flex;align-items:center;gap:11px;font-size:13.5px;color:var(--tx-body);cursor:pointer;margin-bottom:22px;"><span style="width:18px;height:18px;border-radius:6px;border:1.5px solid var(--line);"></span>فقط کالاهای موجود</label>
+
+          <button style="font-family:'Vazirmatn',sans-serif;font-size:14.5px;font-weight:600;color:var(--on-primary);background:var(--c-primary);border:none;border-radius:14px;padding:15px;cursor:pointer;width:100%;">نمایش ۱۹ نتیجه</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 4 · PRODUCT ============ -->
+    <div style="flex:none;display:flex;flex-direction:column;gap:12px;">
+      <div style="display:flex;align-items:center;gap:9px;"><span style="font-size:12px;font-weight:600;color:var(--on-primary);background:var(--c-primary);border-radius:7px;padding:3px 9px;">۰۴</span><span style="font-family:'Markazi Text',serif;font-size:21px;color:var(--tx-head);">صفحهٔ محصول</span></div>
+      <div data-screen-label="صفحهٔ محصول" style="width:392px;background:var(--bg-app);border:1px solid var(--line-soft);border-radius:30px;overflow:hidden;box-shadow:0 20px 48px rgba(45,27,61,0.16);">
+
+        <header style="position:sticky;top:0;z-index:5;background:var(--bg-card);border-bottom:1px solid var(--line);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--tx-head)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+          <span style="font-family:'Markazi Text',serif;font-size:23px;font-weight:600;color:var(--tx-head);">رگالیا</span>
+          <div style="position:relative;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="var(--tx-head)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1.2 12.2a2 2 0 0 1-2 1.8H9.2a2 2 0 0 1-2-1.8Z"/><path d="M9 7V6a3 3 0 0 1 6 0v1"/></svg><span style="position:absolute;top:-7px;inset-inline-start:-8px;background:var(--c-accent);color:var(--on-accent);font-size:10px;font-weight:700;min-width:16px;height:16px;border-radius:9px;display:flex;align-items:center;justify-content:center;padding:0 3px;">۲</span></div>
+        </header>
+
+        <div style="padding:13px 16px 0;font-size:11.5px;color:var(--tx-mute);">خانه ‹ فروشگاه ‹ نیم‌ست ‹ مهتاب</div>
+
+        <!-- gallery -->
+        <div style="padding:12px 16px 0;">
+          <div style="position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--c-accent);"><image-slot id="fa-pdp" shape="rect" placeholder="تصویر محصول" style="display:block;width:100%;height:300px;"></image-slot></div>
+          <div style="margin-top:11px;display:grid;grid-template-columns:repeat(4,1fr);gap:9px;">
+            <div style="border-radius:12px;overflow:hidden;border:1.5px solid var(--c-primary);background:var(--bg-sunken);"><image-slot id="fa-pt1" shape="rect" placeholder="" style="display:block;width:100%;height:64px;"></image-slot></div>
+            <div style="border-radius:12px;overflow:hidden;border:1px solid var(--line-soft);background:var(--bg-sunken);"><image-slot id="fa-pt2" shape="rect" placeholder="" style="display:block;width:100%;height:64px;"></image-slot></div>
+            <div style="border-radius:12px;overflow:hidden;border:1px solid var(--line-soft);background:var(--bg-sunken);"><image-slot id="fa-pt3" shape="rect" placeholder="" style="display:block;width:100%;height:64px;"></image-slot></div>
+            <div style="border-radius:12px;overflow:hidden;border:1px solid var(--line-soft);background:var(--bg-sunken);"><image-slot id="fa-pt4" shape="rect" placeholder="" style="display:block;width:100%;height:64px;"></image-slot></div>
+          </div>
+        </div>
+
+        <!-- buy panel -->
+        <div style="padding:18px 16px 0;">
+          <span style="font-size:10.5px;letter-spacing:0.14em;color:var(--c-accent-d);font-weight:600;">نیم‌ست · نقره و سنگ ماه</span>
+          <h2 style="font-family:'Markazi Text',serif;font-size:30px;line-height:1.12;color:var(--tx-head);margin:6px 0 8px;font-weight:600;">نیم‌ست مهتاب</h2>
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+            <div style="color:var(--c-accent);font-size:14px;letter-spacing:2px;">★★★★<span style="color:var(--line);">★</span></div>
+            <span style="font-size:12px;color:var(--tx-mute);">۳۸ دیدگاه</span>
+          </div>
+          <div style="display:flex;align-items:baseline;gap:9px;margin-bottom:6px;">
+            <span style="font-size:24px;font-weight:700;color:var(--c-accent-d);">۲٬۴۵۰٬۰۰۰ <span style="font-size:14px;font-weight:500;">تومان</span></span>
+            <span style="font-size:13px;color:var(--tx-mute);text-decoration:line-through;">۲٬۹۰۰٬۰۰۰</span>
+          </div>
+          <div style="display:inline-flex;align-items:center;gap:6px;background:color-mix(in oklch, var(--ok) 14%, transparent);border-radius:8px;padding:5px 10px;margin-bottom:16px;"><span style="width:7px;height:7px;border-radius:50%;background:var(--ok);"></span><span style="font-size:12px;color:var(--ok);font-weight:600;">موجود در انبار</span></div>
+          <p style="font-size:13.5px;line-height:1.95;color:var(--tx-body);font-weight:300;margin:0 0 18px;">مجموعه‌ای دست‌ساز شامل گردنبند، گوشواره و دستبند هماهنگ؛ پایهٔ نقره با نگین سنگ ماه که در نور می‌درخشد. هر قطعه جداگانه قابل استفاده است.</p>
+
+          <div style="font-size:12px;font-weight:600;color:var(--tx-head);margin-bottom:9px;">تعداد</div>
+          <div style="display:flex;gap:11px;align-items:center;margin-bottom:18px;">
+            <div style="display:flex;align-items:center;border:1px solid var(--line);border-radius:12px;overflow:hidden;">
+              <button style="width:44px;height:48px;border:none;background:var(--bg-card);color:var(--tx-body);font-size:20px;cursor:pointer;">−</button>
+              <span style="width:46px;text-align:center;font-size:15px;color:var(--tx-head);">۱</span>
+              <button style="width:44px;height:48px;border:none;background:var(--bg-card);color:var(--tx-body);font-size:20px;cursor:pointer;">+</button>
+            </div>
+            <button style="width:50px;height:50px;border-radius:13px;border:1px solid var(--line);background:var(--bg-card);cursor:pointer;display:flex;align-items:center;justify-content:center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--c-primary)" stroke-width="1.8"><path d="M12 20S4 14.5 4 9a4 4 0 0 1 8-1 4 4 0 0 1 8 1c0 5.5-8 11-8 11Z"/></svg></button>
+          </div>
+          <button style="font-family:'Vazirmatn',sans-serif;font-size:15.5px;font-weight:600;color:var(--on-primary);background:var(--c-primary);border:none;border-radius:14px;padding:16px;cursor:pointer;width:100%;">افزودن به سبد خرید</button>
+
+          <div style="border-top:1px solid var(--line);margin-top:20px;padding-top:14px;font-size:12.5px;color:var(--tx-mute);line-height:2.1;">
+            <div><span style="color:var(--tx-body);font-weight:500;">کد محصول:</span> <span dir="ltr">RGL-SET-031</span></div>
+            <div><span style="color:var(--tx-body);font-weight:500;">دسته:</span> نیم‌ست</div>
+            <div><span style="color:var(--tx-body);font-weight:500;">جنس:</span> نقره، سنگ ماه</div>
+          </div>
+        </div>
+
+        <!-- tabs -->
+        <div style="padding:18px 16px 24px;">
+          <div style="display:flex;gap:22px;border-bottom:1px solid var(--line);margin-bottom:14px;">
+            <span style="font-size:13px;font-weight:600;color:var(--tx-head);padding-bottom:11px;border-bottom:2px solid var(--c-primary);">توضیحات</span>
+            <span style="font-size:13px;font-weight:500;color:var(--tx-mute);padding-bottom:11px;">مشخصات</span>
+            <span style="font-size:13px;font-weight:500;color:var(--tx-mute);padding-bottom:11px;">دیدگاه‌ها</span>
+          </div>
+          <p style="font-size:13px;line-height:2;color:var(--tx-body);font-weight:300;margin:0;">قفل و زنجیر نقرهٔ ۹۲۵، با آبکاری محافظ برای دوام رنگ. سنگ‌ها دست‌چین و هم‌اندازه شده‌اند. همراه جعبهٔ پارچه‌ای و دستمال پاک‌کننده ارسال می‌شود.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 5 · CART ============ -->
+    <div style="flex:none;display:flex;flex-direction:column;gap:12px;">
+      <div style="display:flex;align-items:center;gap:9px;"><span style="font-size:12px;font-weight:600;color:var(--on-primary);background:var(--c-primary);border-radius:7px;padding:3px 9px;">۰۵</span><span style="font-family:'Markazi Text',serif;font-size:21px;color:var(--tx-head);">سبد خرید</span></div>
+      <div data-screen-label="سبد خرید" style="width:392px;background:var(--bg-app);border:1px solid var(--line-soft);border-radius:30px;overflow:hidden;box-shadow:0 20px 48px rgba(45,27,61,0.16);">
+
+        <header style="position:sticky;top:0;z-index:5;background:var(--bg-card);border-bottom:1px solid var(--line);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--tx-head)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+          <span style="font-family:'Markazi Text',serif;font-size:23px;font-weight:600;color:var(--tx-head);">سبد خرید</span>
+          <span style="width:22px;"></span>
+        </header>
+
+        <div style="padding:16px 16px 6px;display:flex;flex-direction:column;gap:12px;">
+          <!-- item 1 -->
+          <div style="display:flex;gap:12px;background:var(--bg-card);border:1px solid var(--line-soft);border-radius:16px;padding:11px;">
+            <div style="width:74px;height:74px;flex:none;border-radius:12px;overflow:hidden;background:var(--bg-sunken);"><image-slot id="fa-c1" shape="rect" placeholder="" style="display:block;width:100%;height:100%;"></image-slot></div>
+            <div style="flex:1;display:flex;flex-direction:column;">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+                <div><div style="font-size:10px;letter-spacing:0.1em;color:var(--tx-mute);">نیم‌ست</div><div style="font-family:'Markazi Text',serif;font-size:18px;color:var(--tx-head);">نیم‌ست مهتاب</div></div>
+                <button style="width:26px;height:26px;border-radius:50%;border:1px solid var(--line);background:var(--bg-card);color:var(--tx-mute);cursor:pointer;font-size:14px;line-height:1;">×</button>
+              </div>
+              <div style="margin-top:auto;display:flex;align-items:center;justify-content:space-between;">
+                <div style="display:flex;align-items:center;border:1px solid var(--line);border-radius:9px;overflow:hidden;"><button style="width:30px;height:32px;border:none;background:var(--bg-card);color:var(--tx-body);font-size:15px;cursor:pointer;">−</button><span style="width:30px;text-align:center;font-size:13px;color:var(--tx-head);">۱</span><button style="width:30px;height:32px;border:none;background:var(--bg-card);color:var(--tx-body);font-size:15px;cursor:pointer;">+</button></div>
+                <span style="font-size:14.5px;font-weight:700;color:var(--c-primary);">۲٬۴۵۰٬۰۰۰</span>
+              </div>
+            </div>
+          </div>
+          <!-- item 2 -->
+          <div style="display:flex;gap:12px;background:var(--bg-card);border:1px solid var(--line-soft);border-radius:16px;padding:11px;">
+            <div style="width:74px;height:74px;flex:none;border-radius:12px;overflow:hidden;background:var(--bg-sunken);"><image-slot id="fa-c2" shape="rect" placeholder="" style="display:block;width:100%;height:100%;"></image-slot></div>
+            <div style="flex:1;display:flex;flex-direction:column;">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+                <div><div style="font-size:10px;letter-spacing:0.1em;color:var(--tx-mute);">گوشواره</div><div style="font-family:'Markazi Text',serif;font-size:18px;color:var(--tx-head);">گوشواره قطره</div></div>
+                <button style="width:26px;height:26px;border-radius:50%;border:1px solid var(--line);background:var(--bg-card);color:var(--tx-mute);cursor:pointer;font-size:14px;line-height:1;">×</button>
+              </div>
+              <div style="margin-top:auto;display:flex;align-items:center;justify-content:space-between;">
+                <div style="display:flex;align-items:center;border:1px solid var(--line);border-radius:9px;overflow:hidden;"><button style="width:30px;height:32px;border:none;background:var(--bg-card);color:var(--tx-body);font-size:15px;cursor:pointer;">−</button><span style="width:30px;text-align:center;font-size:13px;color:var(--tx-head);">۲</span><button style="width:30px;height:32px;border:none;background:var(--bg-card);color:var(--tx-body);font-size:15px;cursor:pointer;">+</button></div>
+                <span style="font-size:14.5px;font-weight:700;color:var(--c-primary);">۲٬۵۰۰٬۰۰۰</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- coupon -->
+        <div style="padding:10px 16px 4px;display:flex;gap:9px;">
+          <input placeholder="کد تخفیف" style="font-family:'Vazirmatn',sans-serif;font-size:13px;color:var(--tx-head);padding:12px 14px;border:1px solid var(--line);border-radius:11px;background:var(--bg-card);outline:none;flex:1;text-align:start;" />
+          <button style="font-family:'Vazirmatn',sans-serif;font-size:13.5px;font-weight:600;color:var(--c-primary);background:var(--bg-card);border:1px solid var(--c-primary);border-radius:11px;padding:0 18px;cursor:pointer;">اعمال</button>
+        </div>
+
+        <!-- summary -->
+        <div style="margin:14px 16px 22px;background:var(--bg-card);border:1px solid var(--line-soft);border-radius:18px;padding:18px;">
+          <div style="display:flex;justify-content:space-between;font-size:13.5px;color:var(--tx-body);padding:6px 0;">جمع کل<span style="color:var(--tx-head);">۴٬۹۵۰٬۰۰۰</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:13.5px;color:var(--tx-body);padding:6px 0;">هزینهٔ ارسال<span style="color:var(--tx-head);">۴۵٬۰۰۰</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--line);margin-top:8px;padding-top:13px;">
+            <span style="font-size:15px;font-weight:600;color:var(--tx-head);">مجموع</span>
+            <span style="font-size:19px;font-weight:700;color:var(--c-primary);">۴٬۹۹۵٬۰۰۰ <span style="font-size:12px;font-weight:500;">تومان</span></span>
+          </div>
+          <button style="margin-top:16px;font-family:'Vazirmatn',sans-serif;font-size:15px;font-weight:600;color:var(--on-primary);background:var(--c-primary);border:none;border-radius:14px;padding:15px;cursor:pointer;width:100%;">ادامهٔ فرایند خرید</button>
+          <div style="text-align:center;margin-top:11px;font-size:12.5px;color:var(--c-primary);cursor:pointer;">بازگشت به فروشگاه</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 6 · CHECKOUT ============ -->
+    <div style="flex:none;display:flex;flex-direction:column;gap:12px;">
+      <div style="display:flex;align-items:center;gap:9px;"><span style="font-size:12px;font-weight:600;color:var(--on-primary);background:var(--c-primary);border-radius:7px;padding:3px 9px;">۰۶</span><span style="font-family:'Markazi Text',serif;font-size:21px;color:var(--tx-head);">تسویه‌حساب</span></div>
+      <div data-screen-label="تسویه‌حساب" style="width:392px;background:var(--bg-app);border:1px solid var(--line-soft);border-radius:30px;overflow:hidden;box-shadow:0 20px 48px rgba(45,27,61,0.16);">
+
+        <header style="position:sticky;top:0;z-index:5;background:var(--bg-card);border-bottom:1px solid var(--line);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--tx-head)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+          <span style="font-family:'Markazi Text',serif;font-size:23px;font-weight:600;color:var(--tx-head);">تسویه‌حساب</span>
+          <span style="width:22px;"></span>
+        </header>
+
+        <!-- order summary (collapsible top, sticky concept) -->
+        <div style="margin:16px 16px 0;background:var(--bg-card);border:1px solid var(--line-soft);border-radius:16px;padding:14px 16px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;">
+            <span style="font-size:13.5px;font-weight:600;color:var(--tx-head);">خلاصهٔ سفارش (۳ قلم)</span>
+            <span style="font-size:15px;font-weight:700;color:var(--c-primary);">۴٬۹۹۵٬۰۰۰</span>
+          </div>
+        </div>
+
+        <form style="padding:18px 16px 0;display:flex;flex-direction:column;gap:14px;">
+          <div style="font-family:'Markazi Text',serif;font-size:22px;color:var(--tx-head);margin-bottom:-2px;">اطلاعات گیرنده</div>
+          <div style="display:flex;gap:12px;">
+            <label style="display:flex;flex-direction:column;gap:6px;width:50%;"><span style="font-size:12px;font-weight:500;color:var(--tx-body);">نام</span><input style="font-family:'Vazirmatn',sans-serif;font-size:13.5px;color:var(--tx-head);padding:12px;border:1px solid var(--line);border-radius:11px;background:var(--bg-card);outline:none;text-align:start;" /></label>
+            <label style="display:flex;flex-direction:column;gap:6px;width:50%;"><span style="font-size:12px;font-weight:500;color:var(--tx-body);">نام خانوادگی</span><input style="font-family:'Vazirmatn',sans-serif;font-size:13.5px;color:var(--tx-head);padding:12px;border:1px solid var(--line);border-radius:11px;background:var(--bg-card);outline:none;text-align:start;" /></label>
+          </div>
+          <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:12px;font-weight:500;color:var(--tx-body);">موبایل</span><input dir="ltr" placeholder="0912 345 6789" style="font-family:'Vazirmatn',sans-serif;font-size:13.5px;color:var(--tx-head);padding:12px;border:1px solid var(--line);border-radius:11px;background:var(--bg-card);outline:none;text-align:left;" /></label>
+          <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:12px;font-weight:500;color:var(--tx-body);">ایمیل <span style="color:var(--tx-mute);">(اختیاری)</span></span><input dir="ltr" placeholder="name@example.com" style="font-family:'Vazirmatn',sans-serif;font-size:13.5px;color:var(--tx-head);padding:12px;border:1px solid var(--line);border-radius:11px;background:var(--bg-card);outline:none;text-align:left;" /></label>
+          <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:12px;font-weight:500;color:var(--tx-body);">نشانی</span><textarea rows="2" style="font-family:'Vazirmatn',sans-serif;font-size:13.5px;color:var(--tx-head);padding:12px;border:1px solid var(--line);border-radius:11px;background:var(--bg-card);outline:none;text-align:start;resize:none;"></textarea></label>
+          <div style="display:flex;gap:12px;">
+            <label style="display:flex;flex-direction:column;gap:6px;width:50%;"><span style="font-size:12px;font-weight:500;color:var(--tx-body);">شهر</span><input style="font-family:'Vazirmatn',sans-serif;font-size:13.5px;color:var(--tx-head);padding:12px;border:1px solid var(--line);border-radius:11px;background:var(--bg-card);outline:none;text-align:start;" /></label>
+            <label style="display:flex;flex-direction:column;gap:6px;width:50%;"><span style="font-size:12px;font-weight:500;color:var(--tx-body);">کد پستی</span><input dir="ltr" style="font-family:'Vazirmatn',sans-serif;font-size:13.5px;color:var(--tx-head);padding:12px;border:1px solid var(--line);border-radius:11px;background:var(--bg-card);outline:none;text-align:left;" /></label>
+          </div>
+        </form>
+
+        <!-- totals + pay -->
+        <div style="margin:18px 16px 22px;background:var(--bg-card);border:1px solid var(--line-soft);border-radius:18px;padding:18px;">
+          <div style="display:flex;justify-content:space-between;font-size:13px;color:var(--tx-body);padding:5px 0;">جمع کل<span style="color:var(--tx-head);">۴٬۹۵۰٬۰۰۰</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:13px;color:var(--tx-body);padding:5px 0;">هزینهٔ ارسال<span style="color:var(--tx-head);">۴۵٬۰۰۰</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--line);margin-top:8px;padding-top:12px;margin-bottom:14px;">
+            <span style="font-size:14px;font-weight:600;color:var(--tx-head);">مبلغ قابل پرداخت</span>
+            <span style="font-size:18px;font-weight:700;color:var(--c-primary);">۴٬۹۹۵٬۰۰۰</span>
+          </div>
+          <button style="font-family:'Vazirmatn',sans-serif;font-size:15px;font-weight:600;color:var(--on-primary);background:var(--c-primary);border:none;border-radius:14px;padding:15px;cursor:pointer;width:100%;display:flex;align-items:center;justify-content:center;gap:9px;">انتقال به درگاه پرداخت<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--on-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <div style="display:flex;align-items:center;justify-content:center;gap:7px;margin-top:11px;font-size:11.5px;color:var(--tx-mute);"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--tx-mute)" stroke-width="1.8"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>پرداخت امن از طریق زرین‌پال</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 7 · PAYMENT SUCCESS ============ -->
+    <div style="flex:none;display:flex;flex-direction:column;gap:12px;">
+      <div style="display:flex;align-items:center;gap:9px;"><span style="font-size:12px;font-weight:600;color:var(--on-primary);background:var(--c-primary);border-radius:7px;padding:3px 9px;">۰۷</span><span style="font-family:'Markazi Text',serif;font-size:21px;color:var(--tx-head);">پرداخت موفق</span></div>
+      <div data-screen-label="پرداخت موفق" style="width:392px;height:680px;background:var(--bg-app);border:1px solid var(--line-soft);border-radius:30px;overflow:hidden;box-shadow:0 20px 48px rgba(45,27,61,0.16);display:flex;flex-direction:column;">
+        <header style="background:var(--bg-card);border-bottom:1px solid var(--line);padding:14px 18px;text-align:center;"><span style="font-family:'Markazi Text',serif;font-size:23px;font-weight:600;color:var(--tx-head);">رگالیا</span></header>
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px 26px;">
+          <div style="width:78px;height:78px;border-radius:50%;background:color-mix(in oklch, var(--ok) 16%, transparent);display:flex;align-items:center;justify-content:center;margin-bottom:20px;"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg></div>
+          <h2 style="font-family:'Markazi Text',serif;font-size:28px;color:var(--tx-head);margin:0 0 8px;font-weight:600;">پرداخت با موفقیت انجام شد</h2>
+          <p style="font-size:13.5px;line-height:1.9;color:var(--tx-body);font-weight:300;margin:0 0 22px;max-width:280px;">سفارش شما ثبت شد و به‌زودی آماده‌سازی می‌شود. جزئیات به شماره‌ٔ شما پیامک می‌گردد.</p>
+          <div style="width:100%;background:var(--bg-card);border:1px solid var(--line-soft);border-radius:16px;padding:16px;margin-bottom:22px;">
+            <div style="display:flex;justify-content:space-between;font-size:13px;color:var(--tx-body);padding:6px 0;">شمارهٔ سفارش<span style="color:var(--tx-head);font-weight:600;" dir="ltr">#RGL-10482</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;color:var(--tx-body);padding:6px 0;border-top:1px solid var(--line);">کد پیگیری<span style="color:var(--c-accent-d);font-weight:700;" dir="ltr">A7F3K9</span></div>
+          </div>
+          <button style="font-family:'Vazirmatn',sans-serif;font-size:14.5px;font-weight:600;color:var(--on-primary);background:var(--c-primary);border:none;border-radius:14px;padding:14px;cursor:pointer;width:100%;">بازگشت به فروشگاه</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 8 · PAYMENT FAILED ============ -->
+    <div style="flex:none;display:flex;flex-direction:column;gap:12px;">
+      <div style="display:flex;align-items:center;gap:9px;"><span style="font-size:12px;font-weight:600;color:var(--on-primary);background:var(--c-primary);border-radius:7px;padding:3px 9px;">۰۸</span><span style="font-family:'Markazi Text',serif;font-size:21px;color:var(--tx-head);">پرداخت ناموفق</span></div>
+      <div data-screen-label="پرداخت ناموفق" style="width:392px;height:680px;background:var(--bg-app);border:1px solid var(--line-soft);border-radius:30px;overflow:hidden;box-shadow:0 20px 48px rgba(45,27,61,0.16);display:flex;flex-direction:column;">
+        <header style="background:var(--bg-card);border-bottom:1px solid var(--line);padding:14px 18px;text-align:center;"><span style="font-family:'Markazi Text',serif;font-size:23px;font-weight:600;color:var(--tx-head);">رگالیا</span></header>
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px 26px;">
+          <div style="width:78px;height:78px;border-radius:50%;background:color-mix(in oklch, var(--bad) 16%, transparent);display:flex;align-items:center;justify-content:center;margin-bottom:20px;"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--bad)" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></div>
+          <h2 style="font-family:'Markazi Text',serif;font-size:28px;color:var(--tx-head);margin:0 0 8px;font-weight:600;">پرداخت ناموفق بود</h2>
+          <p style="font-size:13.5px;line-height:1.9;color:var(--tx-body);font-weight:300;margin:0 0 8px;max-width:285px;">تراکنش از سمت بانک تأیید نشد و مبلغی از حساب شما کسر نشده است. سبد خرید شما دست‌نخورده باقی مانده است.</p>
+          <div style="font-size:12px;color:var(--tx-mute);margin-bottom:22px;" dir="ltr">code: NOK-302</div>
+          <button style="font-family:'Vazirmatn',sans-serif;font-size:14.5px;font-weight:600;color:var(--on-primary);background:var(--c-primary);border:none;border-radius:14px;padding:14px;cursor:pointer;width:100%;margin-bottom:10px;">تلاش دوباره</button>
+          <button style="font-family:'Vazirmatn',sans-serif;font-size:13.5px;font-weight:500;color:var(--c-primary);background:transparent;border:1px solid var(--line);border-radius:14px;padding:13px;cursor:pointer;width:100%;">بازگشت به سبد خرید</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 9 · VERIFYING ============ -->
+    <div style="flex:none;display:flex;flex-direction:column;gap:12px;">
+      <div style="display:flex;align-items:center;gap:9px;"><span style="font-size:12px;font-weight:600;color:var(--on-primary);background:var(--c-primary);border-radius:7px;padding:3px 9px;">۰۹</span><span style="font-family:'Markazi Text',serif;font-size:21px;color:var(--tx-head);">در حال بررسی</span></div>
+      <div data-screen-label="در حال بررسی" style="width:392px;height:680px;background:var(--bg-app);border:1px solid var(--line-soft);border-radius:30px;overflow:hidden;box-shadow:0 20px 48px rgba(45,27,61,0.16);display:flex;flex-direction:column;">
+        <header style="background:var(--bg-card);border-bottom:1px solid var(--line);padding:14px 18px;text-align:center;"><span style="font-family:'Markazi Text',serif;font-size:23px;font-weight:600;color:var(--tx-head);">رگالیا</span></header>
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px 26px;">
+          <div style="width:62px;height:62px;border-radius:50%;border:4px solid var(--line);border-top-color:var(--c-primary);margin-bottom:22px;animation:spin 0.9s linear infinite;"></div>
+          <h2 style="font-family:'Markazi Text',serif;font-size:26px;color:var(--tx-head);margin:0 0 8px;font-weight:600;">در حال بررسی پرداخت…</h2>
+          <p style="font-size:13.5px;line-height:1.9;color:var(--tx-body);font-weight:300;margin:0;max-width:270px;">لطفاً این صفحه را نبندید. در حال تأیید تراکنش با درگاه هستیم؛ این کار چند لحظه طول می‌کشد.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 10 · EMPTY CART ============ -->
+    <div style="flex:none;display:flex;flex-direction:column;gap:12px;">
+      <div style="display:flex;align-items:center;gap:9px;"><span style="font-size:12px;font-weight:600;color:var(--on-primary);background:var(--c-primary);border-radius:7px;padding:3px 9px;">۱۰</span><span style="font-family:'Markazi Text',serif;font-size:21px;color:var(--tx-head);">سبد خالی</span></div>
+      <div data-screen-label="سبد خالی" style="width:392px;height:620px;background:var(--bg-app);border:1px solid var(--line-soft);border-radius:30px;overflow:hidden;box-shadow:0 20px 48px rgba(45,27,61,0.16);display:flex;flex-direction:column;">
+        <header style="background:var(--bg-card);border-bottom:1px solid var(--line);padding:14px 18px;text-align:center;"><span style="font-family:'Markazi Text',serif;font-size:23px;font-weight:600;color:var(--tx-head);">سبد خرید</span></header>
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px 26px;">
+          <div style="width:84px;height:84px;border-radius:50%;background:var(--bg-sunken);display:flex;align-items:center;justify-content:center;margin-bottom:20px;"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--c-primary)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1.2 12.2a2 2 0 0 1-2 1.8H9.2a2 2 0 0 1-2-1.8Z"/><path d="M9 7V6a3 3 0 0 1 6 0v1"/></svg></div>
+          <h2 style="font-family:'Markazi Text',serif;font-size:27px;color:var(--tx-head);margin:0 0 8px;font-weight:600;">سبد خرید شما خالی است</h2>
+          <p style="font-size:13.5px;line-height:1.9;color:var(--tx-body);font-weight:300;margin:0 0 22px;max-width:270px;">هنوز چیزی اضافه نکرده‌اید. مجموعهٔ نیم‌ست‌های دست‌ساز را ببینید.</p>
+          <button style="font-family:'Vazirmatn',sans-serif;font-size:14.5px;font-weight:600;color:var(--on-primary);background:var(--c-primary);border:none;border-radius:14px;padding:14px 26px;cursor:pointer;">بازگشت به فروشگاه</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 11 · LOADING SKELETON ============ -->
+    <div style="flex:none;display:flex;flex-direction:column;gap:12px;">
+      <div style="display:flex;align-items:center;gap:9px;"><span style="font-size:12px;font-weight:600;color:var(--on-primary);background:var(--c-primary);border-radius:7px;padding:3px 9px;">۱۱</span><span style="font-family:'Markazi Text',serif;font-size:21px;color:var(--tx-head);">بارگذاری</span></div>
+      <div data-screen-label="بارگذاری" style="width:392px;height:620px;background:var(--bg-app);border:1px solid var(--line-soft);border-radius:30px;overflow:hidden;box-shadow:0 20px 48px rgba(45,27,61,0.16);">
+        <header style="background:var(--bg-card);border-bottom:1px solid var(--line);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;"><span style="font-family:'Markazi Text',serif;font-size:23px;font-weight:600;color:var(--tx-head);">فروشگاه</span><div style="width:60px;height:14px;border-radius:7px;background:var(--line);"></div></header>
+        <div style="padding:18px 16px;display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+          <div style="background:var(--bg-card);border:1px solid var(--line-soft);border-radius:18px;overflow:hidden;"><div style="height:138px;background:linear-gradient(90deg,var(--bg-sunken) 25%,var(--hover) 37%,var(--bg-sunken) 63%);background-size:300px 100%;animation:sh 1.2s linear infinite;"></div><div style="padding:12px;display:flex;flex-direction:column;gap:8px;"><div style="height:13px;width:75%;border-radius:6px;background:var(--line);"></div><div style="height:13px;width:45%;border-radius:6px;background:var(--line);"></div><div style="height:30px;border-radius:9px;background:var(--bg-sunken);margin-top:4px;"></div></div></div>
+          <div style="background:var(--bg-card);border:1px solid var(--line-soft);border-radius:18px;overflow:hidden;"><div style="height:138px;background:linear-gradient(90deg,var(--bg-sunken) 25%,var(--hover) 37%,var(--bg-sunken) 63%);background-size:300px 100%;animation:sh 1.2s linear infinite;"></div><div style="padding:12px;display:flex;flex-direction:column;gap:8px;"><div style="height:13px;width:75%;border-radius:6px;background:var(--line);"></div><div style="height:13px;width:45%;border-radius:6px;background:var(--line);"></div><div style="height:30px;border-radius:9px;background:var(--bg-sunken);margin-top:4px;"></div></div></div>
+          <div style="background:var(--bg-card);border:1px solid var(--line-soft);border-radius:18px;overflow:hidden;"><div style="height:138px;background:linear-gradient(90deg,var(--bg-sunken) 25%,var(--hover) 37%,var(--bg-sunken) 63%);background-size:300px 100%;animation:sh 1.2s linear infinite;"></div><div style="padding:12px;display:flex;flex-direction:column;gap:8px;"><div style="height:13px;width:75%;border-radius:6px;background:var(--line);"></div><div style="height:13px;width:45%;border-radius:6px;background:var(--line);"></div><div style="height:30px;border-radius:9px;background:var(--bg-sunken);margin-top:4px;"></div></div></div>
+          <div style="background:var(--bg-card);border:1px solid var(--line-soft);border-radius:18px;overflow:hidden;"><div style="height:138px;background:linear-gradient(90deg,var(--bg-sunken) 25%,var(--hover) 37%,var(--bg-sunken) 63%);background-size:300px 100%;animation:sh 1.2s linear infinite;"></div><div style="padding:12px;display:flex;flex-direction:column;gap:8px;"><div style="height:13px;width:75%;border-radius:6px;background:var(--line);"></div><div style="height:13px;width:45%;border-radius:6px;background:var(--line);"></div><div style="height:30px;border-radius:9px;background:var(--bg-sunken);margin-top:4px;"></div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 12 · 404 ============ -->
+    <div style="flex:none;display:flex;flex-direction:column;gap:12px;">
+      <div style="display:flex;align-items:center;gap:9px;"><span style="font-size:12px;font-weight:600;color:var(--on-primary);background:var(--c-primary);border-radius:7px;padding:3px 9px;">۱۲</span><span style="font-family:'Markazi Text',serif;font-size:21px;color:var(--tx-head);">صفحه پیدا نشد</span></div>
+      <div data-screen-label="۴۰۴" style="width:392px;height:620px;background:var(--bg-app);border:1px solid var(--line-soft);border-radius:30px;overflow:hidden;box-shadow:0 20px 48px rgba(45,27,61,0.16);display:flex;flex-direction:column;">
+        <header style="background:var(--bg-card);border-bottom:1px solid var(--line);padding:14px 18px;text-align:center;"><span style="font-family:'Markazi Text',serif;font-size:23px;font-weight:600;color:var(--tx-head);">رگالیا</span></header>
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px 26px;">
+          <div style="font-family:'Markazi Text',serif;font-size:84px;line-height:1;color:var(--c-primary);font-weight:700;">۴۰۴</div>
+          <div style="width:46px;height:2px;background:var(--c-accent);margin:14px 0 18px;"></div>
+          <h2 style="font-family:'Markazi Text',serif;font-size:25px;color:var(--tx-head);margin:0 0 8px;font-weight:600;">این صفحه پیدا نشد</h2>
+          <p style="font-size:13.5px;line-height:1.9;color:var(--tx-body);font-weight:300;margin:0 0 22px;max-width:260px;">نشانی اشتباه است یا محصول دیگر موجود نیست. از فروشگاه ادامه دهید.</p>
+          <button style="font-family:'Vazirmatn',sans-serif;font-size:14.5px;font-weight:600;color:var(--on-primary);background:var(--c-primary);border:none;border-radius:14px;padding:14px 26px;cursor:pointer;">بازگشت به خانه</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 13 · ABOUT / CONTACT ============ -->
+    <div style="flex:none;display:flex;flex-direction:column;gap:12px;">
+      <div style="display:flex;align-items:center;gap:9px;"><span style="font-size:12px;font-weight:600;color:var(--on-primary);background:var(--c-primary);border-radius:7px;padding:3px 9px;">۱۳</span><span style="font-family:'Markazi Text',serif;font-size:21px;color:var(--tx-head);">دربارهٔ ما / تماس</span></div>
+      <div data-screen-label="دربارهٔ ما" style="width:392px;background:var(--bg-app);border:1px solid var(--line-soft);border-radius:30px;overflow:hidden;box-shadow:0 20px 48px rgba(45,27,61,0.16);">
+        <header style="position:sticky;top:0;z-index:5;background:var(--bg-card);border-bottom:1px solid var(--line);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--tx-head)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+          <span style="font-family:'Markazi Text',serif;font-size:23px;font-weight:600;color:var(--tx-head);">دربارهٔ ما</span>
+          <span style="width:22px;"></span>
+        </header>
+        <div style="position:relative;margin:16px;border-radius:20px;overflow:hidden;border:1px solid var(--c-accent);"><image-slot id="fa-about" shape="rect" placeholder="تصویر کارگاه" style="display:block;width:100%;height:180px;"></image-slot></div>
+        <div style="padding:4px 18px 0;">
+          <h2 style="font-family:'Markazi Text',serif;font-size:28px;color:var(--tx-head);margin:0 0 10px;font-weight:600;">ساخته‌شده با دست، در تهران</h2>
+          <p style="font-size:13.5px;line-height:2.05;color:var(--tx-body);font-weight:300;margin:0 0 14px;">رگالیا یک کارگاه کوچک است که نیم‌ست‌های نقره و سنگ طبیعی می‌سازد. هر مجموعه در تعداد محدود ساخته می‌شود؛ یعنی هر قطعه کمی با قطعهٔ بعدی فرق دارد. همین تفاوت‌های ریز، اثر دست را نشان می‌دهد.</p>
+          <p style="font-size:13.5px;line-height:2.05;color:var(--tx-body);font-weight:300;margin:0 0 18px;">سفارش‌ها ظرف دو تا چهار روز کاری آماده و ارسال می‌شوند. اگر اندازه یا سنگ خاصی می‌خواهید، پیش از خرید پیام بدهید.</p>
+        </div>
+        <div style="margin:0 16px 22px;background:var(--bg-card);border:1px solid var(--line-soft);border-radius:18px;padding:8px 4px;">
+          <div style="display:flex;align-items:center;gap:13px;padding:13px 14px;border-bottom:1px solid var(--line);">
+            <span style="width:38px;height:38px;flex:none;border-radius:11px;background:var(--bg-sunken);display:flex;align-items:center;justify-content:center;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="var(--c-primary)" stroke-width="1.8" stroke-linecap="round"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg></span>
+            <div style="flex:1;"><div style="font-size:11.5px;color:var(--tx-mute);">تلفن</div><div style="font-size:14px;color:var(--tx-head);font-weight:500;" dir="ltr">021 8800 4521</div></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:13px;padding:13px 14px;">
+            <span style="width:38px;height:38px;flex:none;border-radius:11px;background:var(--bg-sunken);display:flex;align-items:center;justify-content:center;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="var(--c-primary)" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="var(--c-primary)" stroke="none"/></svg></span>
+            <div style="flex:1;"><div style="font-size:11.5px;color:var(--tx-mute);">اینستاگرام</div><div style="font-size:14px;color:var(--tx-head);font-weight:500;" dir="ltr">@regalia.atelier</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+ &quot;$preview&quot;: { &quot;width&quot;: 1360, &quot;height&quot;: 900 },
+ &quot;mode&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;light&quot;, &quot;dark&quot;], &quot;default&quot;: &quot;light&quot;, &quot;tsType&quot;: &quot;string&quot; },
+ &quot;palette&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;purple&quot;, &quot;emerald&quot;], &quot;default&quot;: &quot;purple&quot;, &quot;tsType&quot;: &quot;string&quot; }
+}">
+class Component extends DCLogic {
+  renderVals() {
+    const mode = this.props.mode ?? 'light';
+    const palette = this.props.palette ?? 'purple';
+    return {
+      modeAttr: mode === 'dark' ? 'dark' : '',
+      themeAttr: palette === 'emerald' ? 'emerald' : '',
+    };
+  }
+}
+</script>
+</body>
+</html>
