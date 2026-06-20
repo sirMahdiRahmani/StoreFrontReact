@@ -1,6 +1,15 @@
 import { useCartStore } from "../store/cartStore";
 
-const BASE_URL = import.meta.env.VITE_STORE_API_URL as string | undefined;
+const STORE_API_URL = import.meta.env.VITE_STORE_API_URL as string | undefined;
+
+// In dev, route through the Vite proxy (see vite.config.ts) so the browser
+// calls same-origin localhost — WooCommerce's Store API does not send
+// Access-Control-Allow-Origin for arbitrary dev origins. Production builds
+// call the Store API directly; the WordPress host must allow that origin.
+const BASE_URL =
+  import.meta.env.DEV && STORE_API_URL
+    ? `/wc-api${new URL(STORE_API_URL).pathname}`
+    : STORE_API_URL;
 const CART_TOKEN_HEADER = "Cart-Token";
 
 export class StoreApiError extends Error {
