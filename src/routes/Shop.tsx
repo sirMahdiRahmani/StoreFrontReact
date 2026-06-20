@@ -4,6 +4,8 @@ import { ProductGrid } from "../components/ProductGrid";
 import { ProductGridSkeleton } from "../components/ProductGridSkeleton";
 import { Breadcrumb } from "../components/Breadcrumb";
 import { FilterPanel, type FilterState } from "../components/FilterPanel";
+import { SectionHeading } from "../components/SectionHeading";
+import { CloseIcon } from "../components/icons";
 import { faDigits } from "../lib/format";
 import type { Product } from "../types/product";
 
@@ -74,13 +76,17 @@ export function Shop() {
     <div className="px-4 py-6">
       <Breadcrumb items={[{ label: "خانه", to: "/" }, { label: "فروشگاه" }]} />
 
-      <div className="mt-4 flex items-center justify-between">
-        <h1 className="font-display text-2xl text-text-1">فروشگاه</h1>
+      <SectionHeading eyebrow="گالری" title="فروشگاه" align="start" className="mt-5" />
+
+      <div className="mt-6 flex items-center justify-between border-b border-line pb-4">
+        {products && (
+          <p className="text-sm text-text-3">{faDigits(filteredProducts.length)} محصول</p>
+        )}
         <div className="flex items-center gap-3">
           <button
             type="button"
             onClick={() => setSheetOpen(true)}
-            className="rounded-chip border border-line px-3 py-2 text-sm text-text-1 lg:hidden"
+            className="rounded-chip border border-line px-3 py-2 text-sm text-text-1 transition-colors hover:border-brand hover:text-brand lg:hidden"
           >
             فیلترها
           </button>
@@ -89,7 +95,7 @@ export function Shop() {
             <select
               value={orderby}
               onChange={(e) => setOrderby(e.target.value)}
-              className="rounded-chip border border-line bg-surface px-3 py-2"
+              className="rounded-chip border border-line bg-surface px-3 py-2 transition-colors hover:border-brand"
             >
               {SORT_OPTIONS.map((opt) => (
                 <option key={opt.value} value={opt.value}>
@@ -100,10 +106,6 @@ export function Shop() {
           </label>
         </div>
       </div>
-
-      {products && (
-        <p className="mt-2 text-sm text-text-3">{faDigits(filteredProducts.length)} محصول</p>
-      )}
 
       <div className="mt-4 grid gap-6 lg:grid-cols-[16rem_1fr]">
         <aside className="hidden lg:block">
@@ -147,8 +149,13 @@ export function Shop() {
           <div className="w-full rounded-t-panel bg-surface p-4">
             <div className="mb-3 flex items-center justify-between">
               <h2 className="font-display text-lg text-text-1">فیلترها</h2>
-              <button type="button" aria-label="بستن" onClick={() => setSheetOpen(false)} className="text-text-2">
-                ✕
+              <button
+                type="button"
+                aria-label="بستن"
+                onClick={() => setSheetOpen(false)}
+                className="flex h-9 w-9 items-center justify-center rounded-pill text-text-2 transition-colors hover:bg-hover"
+              >
+                <CloseIcon />
               </button>
             </div>
             <FilterPanel

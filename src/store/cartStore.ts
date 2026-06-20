@@ -41,6 +41,6 @@ export const useCartStore = create<CartState>()(
       setFromServerResponse: (cart) => set({ items: cart.items, totals: cart.totals }),
       clear: () => set({ items: [], totals: null }),
     }),
-    { name: "regalia-cart" },
+    { name: "mellora-cart" },
   ),
 );

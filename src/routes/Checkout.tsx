@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { useCart } from "../hooks/useCart";
 import { useCheckout } from "../hooks/useCheckout";
+import { SectionHeading } from "../components/SectionHeading";
 import { toman } from "../lib/format";
 import type { CheckoutPayload } from "../lib/storeApi";
 
@@ -34,9 +35,9 @@ export function Checkout() {
 
   return (
     <div className="px-4 py-6">
-      <h1 className="font-display text-2xl text-text-1">تسویه‌حساب</h1>
+      <SectionHeading eyebrow="آخرین گام" title="تسویه‌حساب" align="start" />
 
-      <div className="mt-4 grid gap-6 lg:grid-cols-2">
+      <div className="mt-6 grid gap-6 lg:grid-cols-2">
         <form onSubmit={handleSubmit} className="order-2 flex flex-col gap-3 lg:order-1 lg:col-start-2">
           <div className="grid grid-cols-2 gap-3">
             <Field label="نام" value={form.firstName} onChange={update("firstName")} required />
@@ -54,7 +55,7 @@ export function Checkout() {
             <textarea
               value={form.note}
               onChange={(e) => setForm((f) => ({ ...f, note: e.target.value }))}
-              className="rounded-chip border border-line bg-surface px-3 py-2"
+              className="rounded-chip border border-line bg-surface px-3 py-2 outline-none transition-colors focus:border-brand"
               rows={3}
             />
           </label>
@@ -67,9 +68,9 @@ export function Checkout() {
         <div className="order-1 flex flex-col gap-4 rounded-panel border border-line-card bg-surface-2 p-4 shadow-panel lg:order-2 lg:col-start-1 lg:row-start-1 lg:h-fit">
           <h2 className="font-display text-lg text-text-1">خلاصهٔ سفارش</h2>
           {cart && (
-            <div className="flex items-center justify-between border-t border-line pt-3">
+            <div className="flex items-center justify-between border-t border-line pt-4">
               <span className="text-text-2">مبلغ قابل پرداخت</span>
-              <span className="font-body text-lg font-bold text-text-1">
+              <span className="font-body text-xl font-bold text-text-1">
                 {toman(Number(cart.totals.total_price))}
               </span>
             </div>
@@ -78,7 +79,7 @@ export function Checkout() {
             type="button"
             onClick={handleSubmit}
             disabled={checkout.isPending}
-            className="rounded-pill bg-brand-solid px-6 py-3 font-medium text-brand-on disabled:opacity-50"
+            className="rounded-pill bg-brand-solid px-6 py-3.5 font-medium text-brand-on transition-colors hover:bg-shade disabled:opacity-50"
           >
             {checkout.isPending ? "در حال انتقال به درگاه…" : "انتقال به درگاه پرداخت"}
           </button>
@@ -107,7 +108,7 @@ function Field({ label, value, onChange, dir, required, type = "text" }: FieldPr
         onChange={onChange}
         required={required}
         dir={dir}
-        className="rounded-chip border border-line bg-surface px-3 py-2 text-start"
+        className="rounded-chip border border-line bg-surface px-3 py-2 text-start outline-none transition-colors focus:border-brand"
       />
     </label>
   );

@@ -1,8 +1,8 @@
-# Regalia Storefront — RTL / Persian Frontend Spec (React + TS + Tailwind)
+# mellora Storefront — RTL / Persian Frontend Spec (React + TS + Tailwind)
 
 Addendum to `FRONTEND_SPEC.md`. Same component tree, tokens, and Woo mapping — this file
 covers ONLY what changes for the **mobile-first, right-to-left, Persian (fa-IR)** build.
-Visual source of truth: `Regalia Storefront FA.dc.html` (13 phone screens).
+Visual source of truth: `mellora Storefront FA.dc.html` (13 phone screens).
 
 > Everything in the base spec still applies. Where the two disagree on direction, type,
 > numerals, or breakpoints, **this file wins** for the fa-IR locale.
@@ -80,7 +80,7 @@ export const toman = (n: number) =>
 ## 3. Screens to build (from the DC)
 
 Mobile screens, in flow order — each maps to the matching `data-screen-label` in
-`Regalia Storefront FA.dc.html`:
+`mellora Storefront FA.dc.html`:
 
 1. **خانه (Home)** — sticky header (logo · search · cart-badge · menu), free-shipping bar,
    gilt-framed hero with light-catch glow, 4-up category strip (accessory icons), 2-col
@@ -159,7 +159,7 @@ body `#6A5A78`, muted `#9A86A8`, line `#E7DDEC`.
 
 ## 8. Source-of-truth files in this handoff
 
-- `Regalia Storefront FA.dc.html` — all 13 RTL phone screens, token-driven, light/dark + emerald.
+- `mellora Storefront FA.dc.html` — all 13 RTL phone screens, token-driven, light/dark + emerald.
 - `FRONTEND_SPEC.md` — base (LTR) spec: component tree, props, Woo Store API mapping.
 - `design_handoff/tokens.css` — canonical CSS custom properties.
-- `regalia-purple/icons/*.svg` — accessory icons for **category nav only** (never product images).
+- `mellora-purple/icons/*.svg` — accessory icons for **category nav only** (never product images).

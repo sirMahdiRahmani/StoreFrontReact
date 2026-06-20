@@ -53,6 +53,18 @@ async function request<T>(path: string, init: RequestInit = {}): Promise<T> {
   return res.json() as Promise<T>;
 }
 
+/**
+ * WooCommerce Store API cart write endpoints require either a valid Nonce or a
+ * Cart-Token. A fresh guest has neither until the first GET /cart issues a
+ * Cart-Token (captured from the response header in `request`). Without it the
+ * first write — e.g. "add to cart" straight from a product page — returns
+ * 401 woocommerce_rest_missing_nonce. Seed the token first when it's missing.
+ */
+async function ensureCartToken(): Promise<void> {
+  if (useCartStore.getState().cartToken) return;
+  await request<unknown>("/cart");
+}
+
 export const storeApi = {
   getProducts: (params: Record<string, string | number> = {}) => {
     const qs = new URLSearchParams(
@@ -60,29 +72,36 @@ export const storeApi = {
     );
     return request<unknown[]>(`/products?${qs.toString()}`);
   },
-  getProduct: (slug: string) =>
-    request<unknown[]>(`/products?slug=${encodeURIComponent(slug)}`).then((r) => r[0]),
+  getProduct: (id: string | number) => request<unknown>(`/products/${id}`),
   getCart: () => request<unknown>("/cart"),
-  addCartItem: (id: number, quantity: number) =>
-    request<unknown>("/cart/add-item", {
+  addCartItem: async (id: number, quantity: number) => {
+    await ensureCartToken();
+    return request<unknown>("/cart/add-item", {
       method: "POST",
       body: JSON.stringify({ id, quantity }),
-    }),
-  updateCartItem: (key: string, quantity: number) =>
-    request<unknown>("/cart/update-item", {
+    });
+  },
+  updateCartItem: async (key: string, quantity: number) => {
+    await ensureCartToken();
+    return request<unknown>("/cart/update-item", {
       method: "POST",
       body: JSON.stringify({ key, quantity }),
-    }),
-  removeCartItem: (key: string) =>
-    request<unknown>("/cart/remove-item", {
+    });
+  },
+  removeCartItem: async (key: string) => {
+    await ensureCartToken();
+    return request<unknown>("/cart/remove-item", {
       method: "POST",
       body: JSON.stringify({ key }),
-    }),
-  applyCoupon: (code: string) =>
-    request<unknown>("/cart/apply-coupon", {
+    });
+  },
+  applyCoupon: async (code: string) => {
+    await ensureCartToken();
+    return request<unknown>("/cart/apply-coupon", {
       method: "POST",
       body: JSON.stringify({ code }),
-    }),
+    });
+  },
 };
 
 /**

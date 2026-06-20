@@ -1,6 +1,6 @@
-# Regalia Storefront — Frontend Spec (React + TS + Tailwind)
+# mellora Storefront — Frontend Spec (React + TS + Tailwind)
 
-Build target: a WooCommerce-style storefront. Four core pages — **Shop (catalog)**, **Product (single)**, **Cart**, **Checkout** — plus shared **Header**, **CategoryStrip**, and **Footer**. Visual source of truth: `Storefront Pages.dc.html` + the Regalia design system (`styles.css`, `tokens/`).
+Build target: a WooCommerce-style storefront. Four core pages — **Shop (catalog)**, **Product (single)**, **Cart**, **Checkout** — plus shared **Header**, **CategoryStrip**, and **Footer**. Visual source of truth: `Storefront Pages.dc.html` + the mellora design system (`styles.css`, `tokens/`).
 
 > Product images are **real photos** — never the accessory icons. The accessory icon set is for **category navigation only** (CategoryStrip, menus, empty states).
 

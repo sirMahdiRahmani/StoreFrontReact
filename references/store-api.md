@@ -49,14 +49,49 @@ origin gets blocked by the browser.
 - **Prod:** the proxy doesn't exist; the WordPress host must explicitly
   allow the deployed frontend's origin, e.g. via `functions.php`:
   ```php
+  // Remove WP core's default CORS handler so ours is authoritative.
+  remove_filter('rest_pre_serve_request', 'rest_send_cors_headers');
+
   add_filter('rest_pre_serve_request', function ($served) {
-      header('Access-Control-Allow-Origin: https://your-frontend-domain.com');
-      header('Access-Control-Allow-Methods: GET, POST');
-      header('Access-Control-Allow-Headers: Content-Type, Cart-Token');
-      header('Access-Control-Expose-Headers: Cart-Token');
+      $origin = 'https://your-frontend-domain.com'; // exact scheme+host, no trailing slash
+      header('Access-Control-Allow-Origin: ' . $origin);
+      header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+      header('Access-Control-Allow-Headers: Content-Type, Cart-Token, Nonce');
+      header('Access-Control-Expose-Headers: Cart-Token, Nonce');
+      header('Vary: Origin');
+
+      // Answer the preflight immediately.
+      if ('OPTIONS' === $_SERVER['REQUEST_METHOD']) {
+          status_header(200);
+          exit;
+      }
       return $served;
   });
   ```
+
+  Why each line matters:
+  - `OPTIONS` in `Allow-Methods` + the early `exit` — the client sends
+    `Content-Type: application/json` and a custom `Cart-Token` header, so the
+    browser fires a preflight `OPTIONS` before every request. Without an
+    allowed `OPTIONS` response the real request never goes out.
+  - `remove_filter('rest_pre_serve_request', 'rest_send_cors_headers')` — WP
+    core sets its own `Access-Control-Allow-Origin` and would otherwise
+    clobber ours.
+  - `Expose-Headers: Cart-Token` — without it the browser hides the
+    `Cart-Token` response header from JS and the guest cart can't persist.
+  - Origin must be the exact deployed origin (scheme + host, no path, no
+    trailing `/`). If served behind Cloudflare/nginx, ensure they don't strip
+    the `Cart-Token` response header.
+
+  Verify the preflight from the shell:
+  ```sh
+  curl -i -X OPTIONS \
+    -H "Origin: https://your-frontend-domain.com" \
+    -H "Access-Control-Request-Headers: cart-token" \
+    https://YOUR-WP/wp-json/wc/store/v1/cart
+  ```
+  The response must include `Access-Control-Allow-Origin` and an
+  `Access-Control-Allow-Headers` list containing `cart-token`.
 
 ## Checkout
 

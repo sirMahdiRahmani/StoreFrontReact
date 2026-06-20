@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ChevronIcon } from "./icons";
 
 interface BreadcrumbItem {
   label: string;
@@ -17,7 +18,7 @@ export function Breadcrumb({ items }: { items: BreadcrumbItem[] }) {
           ) : (
             <span className="text-text-1">{item.label}</span>
           )}
-          {i < items.length - 1 && <span aria-hidden="true">‹</span>}
+          {i < items.length - 1 && <ChevronIcon className="h-4 w-4 text-text-3" />}
         </span>
       ))}
     </nav>

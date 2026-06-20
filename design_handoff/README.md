@@ -1,10 +1,10 @@
-# Regalia Storefront — Frontend Handoff (RTL / Persian)
+# mellora Storefront — Frontend Handoff (RTL / Persian)
 
 Everything the React + TypeScript + Tailwind agent needs to build the **mobile-first,
 right-to-left, Persian (fa-IR)** storefront. Guest checkout, no accounts.
 
 ## Open this first
-- **`regalia-storefront-fa.html`** — self-contained, offline. Open in any browser to see
+- **`mellora-storefront-fa.html`** — self-contained, offline. Open in any browser to see
   all **13 phone screens** live (fonts, RTL, light theme, image slots baked in). This is
   the pixel reference. *(Drag your own product photos onto the image tiles to preview.)*
 
@@ -26,7 +26,7 @@ right-to-left, Persian (fa-IR)** storefront. Guest checkout, no accounts.
 ## Assets
 - **`icons/`** — accessory SVGs (necklace, bracelet, earrings, ring, …). Use for the
   **category navigation only** — never as stand-ins for product photography.
-- **`Regalia Storefront FA.dc.html`** — editable design source (requires the design tool
+- **`mellora Storefront FA.dc.html`** — editable design source (requires the design tool
   to render; the `.html` bundle above is what to open for reference).
 
 ## The 13 screens

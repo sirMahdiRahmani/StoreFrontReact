@@ -15,7 +15,7 @@ There is no test runner configured in this repo.
 
 ## What this is
 
-Regalia — a headless WooCommerce storefront. Mobile-first, **RTL, Persian
+mellora — a headless WooCommerce storefront. Mobile-first, **RTL, Persian
 (fa-IR)** only (`<html dir="rtl" lang="fa">` in `index.html`). Guest-only
 checkout (no accounts/login anywhere), paid via Zarinpal (Iranian redirect
 gateway). Built on Vite + React 19 + TypeScript + Tailwind v4 + TanStack
@@ -37,7 +37,7 @@ and `references/zarinpal.md` for the full contracts:
   Guest carts work via a `Cart-Token` response header that must be captured
   and replayed on every subsequent request (not cookies — those break
   cross-origin). The token is persisted in `src/store/cartStore.ts`
-  (Zustand + localStorage, key `regalia-cart`).
+  (Zustand + localStorage, key `mellora-cart`).
 - **BFF** (`VITE_BFF_PAYMENT_URL`) — a separate backend, not WooCommerce's
   admin API. It creates the pending WooCommerce order, talks to Zarinpal
   (`payment/request` / `payment/verify`), and only it ever holds
