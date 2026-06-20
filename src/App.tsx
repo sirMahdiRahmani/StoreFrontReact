@@ -8,6 +8,8 @@ import { Product } from "./routes/Product";
 import { Cart } from "./routes/Cart";
 import { Checkout } from "./routes/Checkout";
 import { PaymentResult } from "./routes/PaymentResult";
+import { About } from "./routes/About";
+import { NotFound } from "./routes/NotFound";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +27,8 @@ function App() {
               <Route path="/cart" element={<Cart />} />
               <Route path="/checkout" element={<Checkout />} />
               <Route path="/payment-result" element={<PaymentResult />} />
+              <Route path="/about" element={<About />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
           <Footer />

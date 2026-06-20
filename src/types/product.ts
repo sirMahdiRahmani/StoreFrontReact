@@ -8,6 +8,7 @@ export interface Product {
   description?: string;
   sku?: string;
   is_in_stock: boolean;
+  categories?: { id: number; name: string; slug: string }[];
   images: { id: number; src: string; alt: string }[];
   prices: {
     price: string;
