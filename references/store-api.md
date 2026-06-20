@@ -36,6 +36,28 @@ This gives a stable guest cart with no login, implemented in
 Cart totals (`/cart` response `totals`) are always read from the server and
 rendered as-is — the client never recomputes subtotal/total/shipping.
 
+## CORS
+
+The Store API does not send `Access-Control-Allow-Origin` for arbitrary
+origins by default, so calling it directly from a different dev/prod
+origin gets blocked by the browser.
+
+- **Dev:** `vite.config.ts` proxies `/wc-api/*` to `VITE_STORE_API_URL`'s
+  origin, and `src/lib/storeApi.ts` routes through it automatically when
+  `import.meta.env.DEV` — the browser only ever calls same-origin
+  `localhost`, so no CORS headers are needed locally.
+- **Prod:** the proxy doesn't exist; the WordPress host must explicitly
+  allow the deployed frontend's origin, e.g. via `functions.php`:
+  ```php
+  add_filter('rest_pre_serve_request', function ($served) {
+      header('Access-Control-Allow-Origin: https://your-frontend-domain.com');
+      header('Access-Control-Allow-Methods: GET, POST');
+      header('Access-Control-Allow-Headers: Content-Type, Cart-Token');
+      header('Access-Control-Expose-Headers: Cart-Token');
+      return $served;
+  });
+  ```
+
 ## Checkout
 
 Billing/shipping fields are collected client-side and sent to the BFF (not
