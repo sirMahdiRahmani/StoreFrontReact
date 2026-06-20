@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap");
+@import "tailwindcss";
+@import "./tokens.css";
+
+/* Map design tokens (design_handoff/tokens.css) into Tailwind v4 theme so
+   utilities like bg-surface, text-text-1, border-line, ring-brand resolve
+   to the CSS custom properties — never to literal colors. */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-photo-bg: var(--photo-bg);
+
+  --color-line: var(--line);
+  --color-line-card: var(--line-card);
+  --color-hover: var(--hover);
+
+  --color-brand: var(--brand);
+  --color-brand-solid: var(--brand-solid);
+  --color-brand-on: var(--brand-on);
+  --color-brand-soft: var(--brand-soft);
+  --color-shade: var(--shade);
+
+  --color-gilt: var(--gilt);
+  --color-gilt-on: var(--gilt-on);
+
+  --color-banner-bg: var(--banner-bg);
+  --color-banner-fg: var(--banner-fg);
+
+  --color-text-1: var(--text-1);
+  --color-text-2: var(--text-2);
+  --color-text-3: var(--text-3);
+  --color-text-on-photo: var(--text-on-photo);
+
+  --color-star: var(--star);
+  --color-star-empty: var(--star-empty);
+  --color-ring: var(--ring);
+
+  --radius-chip: var(--r-chip);
+  --radius-card: var(--r-card);
+  --radius-panel: var(--r-panel);
+  --radius-pill: var(--r-pill);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+
+  --shadow-card: var(--shadow-card);
+  --shadow-card-hover: var(--shadow-card-hover);
+  --shadow-panel: var(--shadow-panel);
+}
+
+@layer base {
+  * {
+    border-color: var(--line);
+  }
+
+  html {
+    color-scheme: light dark;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text-2);
+    font-family: var(--font-body);
+    margin: 0;
+    min-height: 100svh;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    color: var(--text-1);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

@@ -1,0 +1,133 @@
+/* =====================================================================
+   Regalia Storefront — Design Tokens (light + dark, LTR + RTL/Persian)
+   Single source of truth for the frontend agent.
+   Link this file, then theme with  <html data-theme="dark">  and
+   direction with  <html dir="rtl" lang="fa">.
+   ===================================================================== */
+
+/* Webfonts are imported in src/styles/index.css (must precede @import "tailwindcss"). */
+
+/* =====================================================================
+   LIGHT THEME (default) — Royal Purple
+   ===================================================================== */
+:root {
+  /* Surfaces */
+  --bg:            #FAF7F2;   /* page background */
+  --surface:       #FFFFFF;   /* cards, header, panels */
+  --surface-2:     #FAF7F2;   /* insets, raised input wells */
+  --photo-bg:      #F1EAF4;   /* product image tile ground */
+
+  /* Lines */
+  --line:          #E7DDEC;   /* dividers, input borders */
+  --line-card:     #ECE4F0;   /* card borders */
+  --hover:         #F4EEF8;   /* row / soft-button hover */
+
+  /* Brand */
+  --brand:         #5B3A7E;   /* primary text/icon accent, active states */
+  --brand-solid:   #5B3A7E;   /* primary BUTTON background */
+  --brand-on:      #FFFFFF;   /* text/icon ON brand-solid */
+  --brand-soft:    #F4EEF8;   /* soft button bg (add-to-cart) */
+  --shade:         #38215A;   /* depth / second icon tone */
+
+  /* Accent (gilt) */
+  --gilt:          #CBA24E;   /* gold accent, sale pill, stars */
+  --gilt-on:       #3A2A06;   /* text ON gilt */
+
+  /* Banner (announcement bar) */
+  --banner-bg:     #38215A;
+  --banner-fg:     #F3ECDA;
+
+  /* Text */
+  --text-1:        #2D1B3D;   /* headings */
+  --text-2:        #6A5A78;   /* body */
+  --text-3:        #9A86A8;   /* muted, eyebrows, captions */
+  --text-on-photo: #6A5A78;
+
+  /* Ratings */
+  --star:          #CBA24E;
+  --star-empty:    #E7DDEC;
+
+  /* Shadows */
+  --shadow-card:       0 1px 2px rgba(45,27,61,0.04), 0 10px 26px rgba(45,27,61,0.05);
+  --shadow-card-hover: 0 16px 34px rgba(45,27,61,0.12);
+  --shadow-panel:      0 10px 30px rgba(45,27,61,0.06);
+  --ring:          #5B3A7E;   /* focus ring */
+
+  /* Radii */
+  --r-chip:   12px;
+  --r-card:   16px;
+  --r-panel:  18px;
+  --r-pill:   999px;
+
+  /* Type */
+  --font-display: "Marcellus", Georgia, serif;
+  --font-body:    "Outfit", "Helvetica Neue", Arial, sans-serif;
+  --tracking-eyebrow: 0.28em;
+  --tracking-label:   0.04em;
+
+  /* Spacing scale */
+  --s1: 8px;  --s2: 12px; --s3: 16px; --s4: 18px;
+  --s5: 28px; --s6: 36px; --s7: 48px; --s8: 64px;
+}
+
+/* =====================================================================
+   DARK THEME — equal-weight counterpart of Royal Purple
+   Apply on <html data-theme="dark"> (or any container).
+   ===================================================================== */
+[data-theme="dark"] {
+  --bg:            #15101F;
+  --surface:       #1F1730;
+  --surface-2:     #291E3D;
+  --photo-bg:      #271C3A;
+
+  --line:          #36294B;
+  --line-card:     #2C2138;
+  --hover:         #291E3D;
+
+  --brand:         #B79AE0;   /* lightened so it reads on dark */
+  --brand-solid:   #7E5BB0;   /* button bg — vivid on dark */
+  --brand-on:      #FFFFFF;
+  --brand-soft:    #2A2040;
+  --shade:         #4A2F6E;
+
+  --gilt:          #D8B461;   /* brightened gold */
+  --gilt-on:       #241A05;
+
+  --banner-bg:     #2A1B40;
+  --banner-fg:     #E9DFC6;
+
+  --text-1:        #F3EEF9;
+  --text-2:        #C5B7D5;
+  --text-3:        #9482AC;
+  --text-on-photo: #9482AC;
+
+  --star:          #D8B461;
+  --star-empty:    #3A2C4E;
+
+  --shadow-card:       0 1px 2px rgba(0,0,0,0.45), 0 10px 26px rgba(0,0,0,0.40);
+  --shadow-card-hover: 0 18px 38px rgba(0,0,0,0.55);
+  --shadow-panel:      0 10px 30px rgba(0,0,0,0.45);
+  --ring:          #B79AE0;
+}
+
+/* =====================================================================
+   RTL / PERSIAN
+   Set <html lang="fa" dir="rtl">. Marcellus has no Arabic glyphs, so the
+   display face falls back to Vazirmatn for fa/ar. Numerals render Persian
+   via font-feature when the browser supports it; otherwise convert in JS.
+   ===================================================================== */
+:root:lang(fa),
+[lang="fa"],
+[lang="ar"],
+[dir="rtl"] {
+  --font-display: "Vazirmatn", "Outfit", sans-serif;
+  --font-body:    "Vazirmatn", "Outfit", sans-serif;
+  --tracking-eyebrow: 0.06em;   /* wide Latin tracking looks wrong in Arabic script */
+  --tracking-label:   0;
+}
+
+/* Persian-Latin numeral display for fa (optional, where supported) */
+[lang="fa"] { font-feature-settings: "ss01"; }
+
+/* Body baseline — consumers may override */
+body { background: var(--bg); color: var(--text-2); font-family: var(--font-body); margin: 0; }
