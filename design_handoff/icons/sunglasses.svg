@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="sunglasses" fill="none">
+          <path d="M9 24 L13 28 M55 24 L51 28" stroke="#5B3A7E" stroke-width="3" stroke-linecap="round"></path>
+          <path d="M30 30 q2 -2.5 4 0" stroke="#5B3A7E" stroke-width="3" stroke-linecap="round"></path>
+          <rect x="11" y="26" width="19" height="14" rx="6.5" fill="#5B3A7E"></rect>
+          <rect x="34" y="26" width="19" height="14" rx="6.5" fill="#5B3A7E"></rect>
+          <rect x="14" y="28.5" width="13" height="9" rx="4" fill="#38215A"></rect>
+          <rect x="37" y="28.5" width="13" height="9" rx="4" fill="#38215A"></rect>
+        </svg>

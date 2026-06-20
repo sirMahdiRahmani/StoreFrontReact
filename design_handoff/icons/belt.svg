@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="belt" fill="none">
+          <rect x="8" y="27" width="48" height="11" rx="3.5" fill="#5B3A7E"></rect>
+          <rect x="8" y="33.5" width="48" height="4.5" rx="2.2" fill="#38215A"></rect>
+          <circle cx="47" cy="32.5" r="1.5" fill="#38215A"></circle>
+          <circle cx="51.5" cy="32.5" r="1.5" fill="#38215A"></circle>
+          <rect x="24.5" y="22" width="15" height="21" rx="4" fill="none" stroke="#CBA24E" stroke-width="3.5"></rect>
+          <rect x="31" y="30.4" width="9" height="3.6" rx="1.8" fill="#CBA24E"></rect>
+        </svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="necktie" fill="none">
+          <path d="M26 10 H38 L34 18 H30 Z" fill="#38215A"></path>
+          <path d="M30 18 H34 L40 25 L34 50 L32 54 L30 50 L24 25 Z" fill="#5B3A7E"></path>
+          <path d="M32 54 L30 50 L24 25 L29 27 Z" fill="#38215A"></path>
+          <circle cx="32" cy="20.5" r="1.8" fill="#CBA24E"></circle>
+        </svg>

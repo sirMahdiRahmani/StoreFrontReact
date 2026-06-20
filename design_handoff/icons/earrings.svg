@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="earrings" fill="none">
+          <path d="M22 13 a7 7 0 0 1 1 13" stroke="#CBA24E" stroke-width="2.6" stroke-linecap="round"></path>
+          <path d="M22.5 26 C17 31 17 39 22.5 43 C28 39 28 31 22.5 26 Z" fill="#5B3A7E"></path>
+          <path d="M22.5 26 C17 31 17 39 22.5 43 Z" fill="#38215A"></path>
+          <path d="M42 13 a7 7 0 0 1 1 13" stroke="#CBA24E" stroke-width="2.6" stroke-linecap="round"></path>
+          <path d="M42.5 26 C37 31 37 39 42.5 43 C48 39 48 31 42.5 26 Z" fill="#5B3A7E"></path>
+          <path d="M42.5 26 C37 31 37 39 42.5 43 Z" fill="#38215A"></path>
+        </svg>

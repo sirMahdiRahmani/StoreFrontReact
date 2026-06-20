@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="bracelet" fill="none">
+          <ellipse cx="32" cy="33" rx="19" ry="14" fill="none" stroke="#5B3A7E" stroke-width="4.5"></ellipse>
+          <path d="M15 35 a19 14 0 0 0 34 0" fill="none" stroke="#38215A" stroke-width="4.5" stroke-linecap="round"></path>
+          <circle cx="32" cy="19.2" r="4" fill="#CBA24E"></circle>
+          <circle cx="18.5" cy="27" r="3" fill="#CBA24E"></circle>
+          <circle cx="45.5" cy="27" r="3" fill="#CBA24E"></circle>
+        </svg>
